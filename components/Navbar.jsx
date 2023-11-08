@@ -19,9 +19,10 @@ const Navbar = () => (
     {/* Create a Flex container for the navigation bar with padding and a bottom border. */}
     <Box fontSize='3xl' color='blue.400' fontWeight='bold'>
       {/* Create a Box for the brand/logo. */}
+
       <Link href='/' paddingLeft='2'>
         {/* Create a link using Next.js routing to the home page. */}
-        Realtor
+        HomeHorizon
         {/* Display the text "Realtor" as the brand/logo. */}
       </Link>
     </Box>
@@ -30,6 +31,7 @@ const Navbar = () => (
     <Box>
       {/* Create a Box for the menu. */}
       <Menu>
+
         {/* Create a dropdown menu using Chakra UI's Menu component. */}
         <MenuButton as={IconButton} icon={<FcMenu />} variant='outline' color='red.400' />
         {/* Display an icon (hamburger menu) for the menu button. */}
