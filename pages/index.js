@@ -21,7 +21,12 @@ export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, link
 
 
 const Home = ({ propertiesForSale, propertiesForRent }) => (
+  // Define a functional component called Home, which receives two arrays of property listings as props: propertiesForSale and propertiesForRent.
+
   <Box>
+    {/* Create a container for the content. */
+
+    {/* Banner Section for Renting Properties */}
     <Banner
       purpose='RENT A HOME'
       title1='Rental Homes for'
@@ -32,9 +37,15 @@ const Home = ({ propertiesForSale, propertiesForRent }) => (
       linkName='/search?purpose=for-rent'
       imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4'
     />
+    // Display the first banner section with information about renting properties.
+
     <Flex flexWrap='wrap'>
+      {/* Create a Flex container for property listings. */
       {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
+      // Map over the propertiesForRent array and render each property using the Property component. Each property has a unique key based on its ID.
     </Flex>
+
+    {/* Banner Section for Buying Properties */}
     <Banner
       purpose='BUY A HOME'
       title1=' Find, Buy & Own Your'
@@ -45,11 +56,16 @@ const Home = ({ propertiesForSale, propertiesForRent }) => (
       linkName='/search?purpose=for-sale'
       imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008'
     />
+    // Display the second banner section with information about buying properties.
+
     <Flex flexWrap='wrap'>
+      {/* Create another Flex container for property listings. */
       {propertiesForSale.map((property) => <Property property={property} key={property.id} />)}
+      // Map over the propertiesForSale array and render each property using the Property component. Each property has a unique key based on its ID.
     </Flex>
   </Box>
 );
+
 
 export async function getStaticProps() {
   const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`);
