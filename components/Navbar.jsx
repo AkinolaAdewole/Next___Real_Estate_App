@@ -22,10 +22,14 @@ const Navbar = () => (
 
       <Link href='/' paddingLeft='2'>
         {/* Create a link using Next.js routing to the home page. */}
-        HomeHorizon
-        {/* Display the text "Realtor" as the brand/logo. */}
+        HomeHorizon  
       </Link>
     </Box>
+
+    <Box fontSize='3xl' color='blue.300' paddingLeft='8' fontWeight='bold'>
+      Akinola Adewole
+    </Box>
+
     <Spacer />
     {/* Create a Spacer to push menu items to the right. */}
     <Box>
